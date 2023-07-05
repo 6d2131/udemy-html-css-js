@@ -29,7 +29,7 @@
             const milli = now.getTime()-start.getTime();
             const seconds = Math.floor(milli / 1000);
             const minutes = Math.floor(seconds / 60);
-            const hour = Math.floor(seconds / 360);
+            const hour = Math.floor(minutes / 60);
 
             const sec = seconds - minutes * 60;
             const min = minutes - hour * 60;
