@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+            <p id="timer">00:00:00:00</p>
+        <div>
+            <button id="start_stop" class="btn btn-lg btn-primary">START</button>
+        </div>
+    </div>
+    <script>
+        const addZero = function(value) {
+            if(value < 10) {
+                value = '0' + value;
+            }
+            return value;
+        };
+        document.getElementById('start_stop').addEventListener('click', function(){
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hour = now.getHours();
+        // seconds = addZero(seconds);
+        document.getElementById('timer').innerHTML = addZero(hour) + ':' + addZero(minutes) + ':' + addZero(seconds);
+        });
+    </script>
+</body>
+</html>
